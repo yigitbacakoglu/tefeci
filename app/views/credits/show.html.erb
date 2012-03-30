@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Friend:</b>
+  <%= @credit.friend_id %>
+</p>
+
+<p>
+  <b>Miktar:</b>
+  <%= @credit.miktar %>
+</p>
+
+<p>
+  <b>Durum:</b>
+  <%= @credit.durum %>
+</p>
+
+<p>
+  <b>Ver tarih:</b>
+  <%= @credit.ver_tarih %>
+</p>
+
+<p>
+  <b>Vade tarih:</b>
+  <%= @credit.vade_tarih %>
+</p>
+
+
+<%= link_to 'Edit', edit_credit_path(@credit) %> |
+<%= link_to 'Back', credits_path %>

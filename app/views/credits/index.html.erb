@@ -1,0 +1,31 @@
+<h1>Listing credits</h1>
+
+<table>
+  <tr>
+    <th>Friend</th>
+    <th>Miktar</th>
+    <th>Durum</th>
+    <th>Ver tarih</th>
+    <th>Vade tarih</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @credits.each do |credit| %>
+  <tr>
+    <td><%= credit.friend_id %></td>
+    <td><%= credit.miktar %></td>
+    <td><%= credit.durum %></td>
+    <td><%= credit.ver_tarih %></td>
+    <td><%= credit.vade_tarih %></td>
+    <td><%= link_to 'Show', credit %></td>
+    <td><%= link_to 'Edit', edit_credit_path(credit) %></td>
+    <td><%= link_to 'Destroy', credit, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Credit', new_credit_path %>

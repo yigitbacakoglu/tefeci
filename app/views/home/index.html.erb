@@ -1,0 +1,12 @@
+<p>
+	 <% if current_user %>
+	 <h1> Selam <span style='color:black'><%= current_user.name %></span><br />
+        </h1>
+          <a href="<%=friends_path%>">şuradan</a> tanımla.
+       <p>  <a href="/signout">CIKIS</a> </p>
+
+          <% else %>
+       <p> <%= link_to "twitter", "/auth/twitter" %> </p>
+         <% end %>
+        
+      </p>
