@@ -4,9 +4,9 @@
         
         <div class="nav">
           <ul>
-          <li><a href="http://www.openwebdesign.org">Yeni Borc Ekle</a></li>
-            <li><a href="http://www.designcreek.com">Kisiyi Duzenle</a></li>
-            <li><a href="#">Kisiyi Sil</a></li>
+          <li> <li><a href="<%= new_credit_path(:friend_id => @friend)%>" >Yeni Borc Ekle</a></li>
+            <li><a href="<%= edit_friend_path(@friend)%>">Kisiyi Duzenle</a></li>
+            <li><%= link_to 'Kisiyi sil', @friend, :confirm => 'Kisiyi silmek istediginizden emin misiniz ?', :method => :delete %></li>
             <li><a href="#">Hatirlat</a></li>
             
           </ul>
@@ -33,37 +33,41 @@
 <p>&nbsp;</p>
  </div>
 
-<h1>Listing credits</h1>
+<h1>Borc Bakiyesi</h1>
 <p>&nbsp;</p>
-<table>
+
+
+<table border="7">
   <tr>
-    <th>Friend</th>
-    <th>Miktar</th>
-    <th>Durum</th>
-    <th>Ver tarih</th>
-    <th>Vade tarih</th>
-    <th></th>
-    <th></th>
-    <th></th>
+   
+    <th><h2>Miktar </h2></th>
+    <th><h1>Durum</h1></th>
+    <th><h1>Verilis Tarihi</h1></th>
+    <th><h1>Vade Tarihi</h1></th>
+    <td colspan="2"><h1>Islemler</h1></td>
+    
   </tr>
 
 <% @credit.each do |credit| %>
   <tr>
-    <td><%= credit.friend_id %></td>
-    <td><%= credit.miktar %></td>
-    <td><%= credit.durum %></td>
-    <td><%= credit.ver_tarih %></td>
-    <td><%= credit.vade_tarih %></td>
-    <td><%= link_to 'Show', credit %></td>
-    <td><%= link_to 'Edit', edit_credit_path(credit) %></td>
-    <td><%= link_to 'Destroy', credit, :confirm => 'Are you sure?', :method => :delete %></td>
+   
+    <td width=150><h3><%= credit.miktar %><%=" TL"%></h3></td>
+    <%if credit.durum == "not_paid"%>
+  
+ <td width=150> <h3><%= "Odenmedi" %></h3></td>
+  <% else %>
+  
+ <td width=150><h3> <%= "Odendi" %></h3></td>
+  <%end%>
+    <td width=150><h3><%= credit.ver_tarih.to_date() %></h3></td>
+    <td width=150><h3><%= credit.vade_tarih.to_date() %></h3></td>
+    
+    <td width=70 ><h3><%= link_to 'Duzenle', edit_credit_path(credit) %><h3></td>
+    <td width=70><h3><%= link_to 'Borcu Sil', credit, :confirm => 'Borcunu odedi mi ?', :method => :delete %><h3></td>
+    
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Credit', new_credit_path(:friend_id => @friend) %>
-
-<%= link_to 'Edit', edit_friend_path(@friend) %> |
-<%= link_to 'Back', friends_path %>

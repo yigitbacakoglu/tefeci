@@ -11,8 +11,13 @@
 </p>
 
 <p>
+  <%if @credit.durum == "not_paid"%>
   <b>Durum:</b>
-  <%= @credit.durum %>
+  <%= "Odenmedi" %>
+  <% else %>
+  <b>Durum:</b>
+  <%= "Odendi" %>
+  <%end%>
 </p>
 
 <p>

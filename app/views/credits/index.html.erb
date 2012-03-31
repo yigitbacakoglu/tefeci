@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Friend</th>
+    <th><h2>Friend</h2></th>
     <th>Miktar</th>
     <th>Durum</th>
     <th>Ver tarih</th>
@@ -16,7 +16,16 @@
   <tr>
     <td><%= credit.friend_id %></td>
     <td><%= credit.miktar %></td>
-    <td><%= credit.durum %></td>
+    
+     <%if credit.durum == "not_paid"%>
+  
+ <td> <%= "Odenmedi" %></td>
+  <% else %>
+  
+ <td> <%= "Odendi" %></td>
+  <%end%>
+    
+    
     <td><%= credit.ver_tarih %></td>
     <td><%= credit.vade_tarih %></td>
     <td><%= link_to 'Show', credit %></td>

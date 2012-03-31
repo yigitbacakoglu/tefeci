@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :durum %><br />
-    <%= f.text_field :durum %>
+    <%=  select("credit", "durum", STATUS_CHOICES.collect{|key,value| [value, key]})  %>
   </div>
   <div class="field">
     <%= f.label :ver_tarih %><br />

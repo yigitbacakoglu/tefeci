@@ -35,6 +35,7 @@ class CreditsController < ApplicationController
   # GET /credits/1/edit
   def edit
     @credit = Credit.find(params[:id])
+     @friend = Friend.find(@credit.friend_id)
   end
 
   # POST /credits
@@ -57,10 +58,10 @@ class CreditsController < ApplicationController
   # PUT /credits/1.json
   def update
     @credit = Credit.find(params[:id])
-
+    @friend = Friend.find(@credit.friend_id)
     respond_to do |format|
       if @credit.update_attributes(params[:credit])
-        format.html { redirect_to @credit, :notice => 'Credit was successfully updated.' }
+        format.html { redirect_to @friend}
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }

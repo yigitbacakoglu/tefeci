@@ -1,34 +1,33 @@
-
-<h1>Listing friends</h1>
-
-<table>
+<p>&nbsp;</p>
+<h1>Arkadaslarim</h1>
+<p></p>
+<p>&nbsp;</p>
+<table border=10>
   <tr>
-    <th>Name</th>
-    <th>Surname</th>
-    <th>Email</th>
-    <th>User</th>
-    <th>Created at</th>
-    <th>Updated at</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th><h2>Adi</h2></th>
+    <th><h1>Soyadi</h1></th>
+    <th><h1>Email</h1></th>
+    <td colspan="2"><h1>Islemler</h1></td>
+   
   </tr>
 
 <% @friends.each do |friend| %>
   <tr>
-    <td><%= friend.name %></td>
-    <td><%= friend.surname %></td>
-    <td><%= friend.email %></td>
-    <td><%= friend.user_id %></td>
-    <td><%= friend.created_at %></td>
-    <td><%= friend.updated_at %></td>
-    <td><%= link_to 'Show', friend %></td>
-    <td><%= link_to 'Edit', edit_friend_path(friend) %></td>
-    <td><%= link_to 'Destroy', friend, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td width=180><h3><%= friend.name %></h3></td>
+    
+    <td width=180 ><h3><%= friend.surname %></h3></td>
+    <td width=180><h3><%= friend.email %></h3></td>
+   
+    <td><h3><%= link_to 'Borc Bilgisi', friend %></h3></td>
+    <td><h3><%= link_to 'Kisiyi Duzenle', edit_friend_path(friend) %></h3></td>
+    
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Friend', new_friend_path %>
+  <div id="main">  
+<h3><%= link_to 'Yeni Arkadas Ekle', new_friend_path %></h3>
+</div>
+   
