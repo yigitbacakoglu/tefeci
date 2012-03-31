@@ -24,7 +24,7 @@ class CreditsController < ApplicationController
   # GET /credits/new
   # GET /credits/new.json
   def new
-    @credit = Credit.new
+    @credit = Credit.new(:friend_id => params[:friend_id] )
 
     respond_to do |format|
       format.html # new.html.erb

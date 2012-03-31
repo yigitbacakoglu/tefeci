@@ -1,12 +1,58 @@
-<p>
-	 <% if current_user %>
-	 <h1> Selam <span style='color:black'><%= current_user.name %></span><br />
-        </h1>
-          <a href="<%=friends_path%>">şuradan</a> tanımla.
-       <p>  <a href="/signout">CIKIS</a> </p>
 
-          <% else %>
-       <p> <%= link_to "twitter", "/auth/twitter" %> </p>
-         <% end %>
+     <% if current_user %>
+   
+      <div id="main">
+        <div class="right">
         
-      </p>
+        
+        <div class="nav">
+          <ul>
+          <li><a href="http://www.openwebdesign.org">Yeni Borc Ekle</a></li>
+            <li><a href="http://www.designcreek.com">Kisiyi Duzenle</a></li>
+            <li><a href="#">Kisiyi Sil</a></li>
+            <li><a href="#">Hatirlat</a></li>
+            
+          </ul>
+        </div>
+      </div>
+      <div class="left">
+     <h6> Hosgeldin,</h6>
+        <p>&nbsp;</p>
+        <h6><%=current_user.name%></h6>
+<p>&nbsp;</p>
+       
+         
+       
+
+          
+       </div>
+      
+    </div>
+    
+          <% else %>
+       
+        
+    <div id="main">
+      <div class="left">
+       
+         <p align="center">  &quot;Ben yemedim sen ye...&quot;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <h6>Demiyor musun ? O zaman bu uygulamayi bir dene !</h6>
+<p>&nbsp;</p>
+       
+       
+       
+       </p>
+       <p>&nbsp;</p>
+       <p>&nbsp;</p>
+       <p align="center"><a href="/auth/twitter"><img src="images/connect-with-twitter.png" width="253" height="50" alt="Login" longdesc="/auth/twitter" /></a></p>
+       <p>&nbsp;</p>
+       <p>&nbsp;</p>
+       <p>&nbsp;</p>
+      </div>
+      
+    </div>
+     <% end %>
+   
+

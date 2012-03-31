@@ -1,35 +1,69 @@
+<div id="main">
+        <div class="right">
+        
+        
+        <div class="nav">
+          <ul>
+          <li><a href="http://www.openwebdesign.org">Yeni Borc Ekle</a></li>
+            <li><a href="http://www.designcreek.com">Kisiyi Duzenle</a></li>
+            <li><a href="#">Kisiyi Sil</a></li>
+            <li><a href="#">Hatirlat</a></li>
+            
+          </ul>
+        </div>
+      </div>
+<p>&nbsp;</p>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
-  <%= @friend.name %>
+ <h3> <b>Adi:</b>
+  <%= @friend.name %></h3>
 </p>
 
 <p>
-  <b>Surname:</b>
-  <%= @friend.surname %>
+ <h3> <b>Soyadi:</b>
+  <%= @friend.surname %></h3>
 </p>
 
 <p>
-  <b>Email:</b>
-  <%= @friend.email %>
+ <h3> <b>Email:</b>
+  <%= @friend.email %></h3>
 </p>
 
-<p>
-  <b>User:</b>
-  <%= @friend.user_id %>
-</p>
+<p>&nbsp;</p>
+ </div>
 
-<p>
-  <b>Created at:</b>
-  <%= @friend.created_at %>
-</p>
+<h1>Listing credits</h1>
+<p>&nbsp;</p>
+<table>
+  <tr>
+    <th>Friend</th>
+    <th>Miktar</th>
+    <th>Durum</th>
+    <th>Ver tarih</th>
+    <th>Vade tarih</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
-<p>
-  <b>Updated at:</b>
-  <%= @friend.updated_at %>
-</p>
+<% @credit.each do |credit| %>
+  <tr>
+    <td><%= credit.friend_id %></td>
+    <td><%= credit.miktar %></td>
+    <td><%= credit.durum %></td>
+    <td><%= credit.ver_tarih %></td>
+    <td><%= credit.vade_tarih %></td>
+    <td><%= link_to 'Show', credit %></td>
+    <td><%= link_to 'Edit', edit_credit_path(credit) %></td>
+    <td><%= link_to 'Destroy', credit, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
 
+<br />
+
+<%= link_to 'New Credit', new_credit_path(:friend_id => @friend) %>
 
 <%= link_to 'Edit', edit_friend_path(@friend) %> |
 <%= link_to 'Back', friends_path %>

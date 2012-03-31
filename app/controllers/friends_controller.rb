@@ -2,8 +2,8 @@ class FriendsController < ApplicationController
   # GET /friends
   # GET /friends.json
   def index
-    @friends = Friend.all
-
+    @friends = Friend.find_all_by_user_id(current_user.uid)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @friends }
@@ -13,17 +13,23 @@ class FriendsController < ApplicationController
   # GET /friends/1
   # GET /friends/1.json
    def show
-    @friend = current_user.friends.find(params[:id])
+
+
+    @credit=Credit.find_all_by_friend_id(params[:id])
+    @friend = Friend.find(params[:id])
     respond_to do |format|
       format.html
       format.json { render :json => @friend }
     end
   end
 
+
+
+
   # GET /friends/new
   # GET /friends/new.json
   def new
-    @friend = Friend.new
+    @friend = Friend.new(:user_id =>current_user.uid)
 
     respond_to do |format|
       format.html # new.html.erb
