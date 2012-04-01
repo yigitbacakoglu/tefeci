@@ -77,10 +77,11 @@ class CreditsController < ApplicationController
   # DELETE /credits/1.json
   def destroy
     @credit = Credit.find(params[:id])
+    @friend = Friend.find(@credit.friend_id)
     @credit.destroy
 
     respond_to do |format|
-      format.html { redirect_to credits_url }
+      format.html { redirect_to @friend }
       format.json { head :no_content }
     end
   end
