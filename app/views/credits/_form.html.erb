@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :friend_id %><br />
-    <%= f.number_field :friend_id %>
+    <%= f.label :Arkadas_No %><br />
+    <%= f.text_field :friend_id ,:readonly=>'true' %>
   </div>
   <div class="field">
     <%= f.label :miktar %><br />
@@ -24,14 +24,16 @@
     <%=  select("credit", "durum", STATUS_CHOICES.collect{|key,value| [value, key]})  %>
   </div>
   <div class="field">
-    <%= f.label :ver_tarih %><br />
-    <%= f.datetime_select :ver_tarih %>
+    <%= f.label :Verdigim_Tarih %><br />
+    <%= f.date_select :ver_tarih %>
   </div>
   <div class="field">
-    <%= f.label :vade_tarih %><br />
-    <%= f.datetime_select :vade_tarih %>
+    <%= f.label :Vade_Tarihi %><br />
+    <%= f.date_select :vade_tarih %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <p>&nbsp;</p>
+    <%= f.submit(label='Kaydet') %>
+
   </div>
 <% end %>

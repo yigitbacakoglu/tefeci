@@ -1,6 +1,10 @@
 class FriendsController < ApplicationController
   # GET /friends
   # GET /friends.json
+before_filter :login_required
+
+
+  
   def index
     @friends = Friend.find_all_by_user_id(current_user.uid)
     
@@ -49,7 +53,8 @@ class FriendsController < ApplicationController
 
     respond_to do |format|
       if @friend.save
-        format.html { redirect_to @friend, :notice => 'Friend was successfully created.' }
+        
+        format.html { redirect_to @friend }
         format.json { render :json => @friend, :status => :created, :location => @friend }
       else
         format.html { render :action => "new" }
@@ -74,11 +79,30 @@ class FriendsController < ApplicationController
     end
   end
 
+  def email
+    @friend = Friend.find(params[:id])
+    @user=User.find_by_uid(@friend.user_id)
+    UserMailer.credit_confirmation(@friend,@user).deliver
+     respond_to do |format|
+      format.html { redirect_to @friend, :main => 'arkadasa mail atildi' }
+      format.json { head :no_content }
+    end
+    
+  end
+
   # DELETE /friends/1
   # DELETE /friends/1.json
   def destroy
+
+    @credit = Credit.find_all_by_friend_id(params[:id])
+    
     @friend = Friend.find(params[:id])
+
+   @credit.each do |credit|
+      credit.destroy
+   end
     @friend.destroy
+    
 
     respond_to do |format|
       format.html { redirect_to friends_url }

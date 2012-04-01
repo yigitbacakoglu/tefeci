@@ -1,0 +1,37 @@
+<p>&nbsp;</p>
+<h1>Aldigim Paralarim</h1>
+<p></p>
+<p>&nbsp;</p>
+<table border=10>
+  <tr>
+    <th><h2>Adi</h2></th>
+    <th><h1>Soyadi</h1></th>
+    <th><h1>Email</h1></th>
+    <td><h1>Odenen Borc</h1></td>
+    <td><h1>Islemler</h1></td>
+   
+  </tr>
+
+<% @credits.each do |credit| %>
+  
+  <% @friends=Friend.find(credit.friend_id)%>
+  
+  <tr>
+    <td width=180><h3><%= @friends.name %></h3></td>
+    
+    <td width=180 ><h3><%= @friends.surname %></h3></td>
+    <td width=180><h3><%= @friends.email %></h3></td>
+    <td width=180><h3><%=credit.miktar%> TL</h3></td>
+
+   
+    <td><h3><a href="<%= friend_path(@friends)%>" >Kisiyi Goruntule</a></h3></td>
+    
+    
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+  
+   

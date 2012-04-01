@@ -1,15 +1,18 @@
 Tefeci::Application.routes.draw do
   resources :credits
 
-  resources :friends
+  
 
   resources :users
 
-   
+  resources :friends
 
   match "/auth/:provider/callback" => "sessions#create"
   match "/signout" => "sessions#destroy", :as => :signout
 
+  match "/friends/:id/email" => "friends#email", :as => :email
+  match "/odenen/index" => "odenen#index"
+  match "/odenmeyen/index" => "odenmeyen#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 root :to => "home#index"

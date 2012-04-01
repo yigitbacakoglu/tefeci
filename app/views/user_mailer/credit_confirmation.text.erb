@@ -1,0 +1,12 @@
+Merhaba <%=@friend.name.upcase%>,
+bana olan borcunu unutmadin insallah.
+
+Gorusmek uzere.. 
+<%=@user.name%>
+Miktar               Verdigim Tarih          Vade Tarihi
+<% @credits.each do |credit| %>
+<%= credit.miktar %> <%= credit.ver_tarih %> <%= credit.vade_tarih %> 
+    
+    
+  
+<% end %>

@@ -1,7 +1,10 @@
 class CreditsController < ApplicationController
   # GET /credits
   # GET /credits.json
+ before_filter :login_required
   def index
+    
+    
     @credits = Credit.all
 
     respond_to do |format|
@@ -25,7 +28,7 @@ class CreditsController < ApplicationController
   # GET /credits/new.json
   def new
     @credit = Credit.new(:friend_id => params[:friend_id] )
-
+ @friend = Friend.find(@credit.friend_id)
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @credit }
@@ -42,10 +45,10 @@ class CreditsController < ApplicationController
   # POST /credits.json
   def create
     @credit = Credit.new(params[:credit])
-
+    @friend = Friend.find(@credit.friend_id)
     respond_to do |format|
       if @credit.save
-        format.html { redirect_to @credit, :notice => 'Credit was successfully created.' }
+        format.html { redirect_to @friend}
         format.json { render :json => @credit, :status => :created, :location => @credit }
       else
         format.html { render :action => "new" }
