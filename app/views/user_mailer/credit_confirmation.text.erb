@@ -1,1 +1,19 @@
-Selam <%=@friend.name.upcase%>
+Selam <%=@friend.name.upcase%>,
+
+Bana olan borcunu unutmadin insallah.Ayrintilari asagida gorebilirsin.
+
+Gorusmek uzere.
+
+Borc Bakiyesi 
+Miktar              Durum             Verdigim Tarih         Vade Tarihi
+<% @credits.each do |credit| %>
+<%= credit.miktar %> <%if credit.durum == "not_paid"%> <%= "Odenmedi" %> <% else %> <%= "Odendi" %>  <%= credit.ver_tarih.to_date() %> <%= credit.vade_tarih.to_date() %>
+
+Toplam Borcun:<%= Credit.sum('miktar',:group =>:friend_id,:conditions=>["durum='not_paid'"])[@friend.id] or 0 %> TL
+
+
+Bu mail <%=@user.name.upcase%> tarafindan Tefeci Uygulamasi ile gonderilmistir.
+
+http://tefeci.herokuapp.com
+
+
