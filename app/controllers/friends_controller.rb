@@ -81,8 +81,8 @@ before_filter :login_required
 
   def email
     @friend = Friend.find(params[:id])
-    @user=User.find_by_uid('@friend.user_id')
-    UserMailer.credit_confirmation(@friend,@user).deliver
+    
+    UserMailer.credit_confirmation(@friend).deliver
      respond_to do |format|
       format.html { redirect_to @friend, :main => 'arkadasa mail atildi' }
       format.json { head :no_content }
