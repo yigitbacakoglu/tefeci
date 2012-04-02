@@ -84,7 +84,7 @@ before_filter :login_required
     
     UserMailer.credit_confirmation(@friend).deliver
      respond_to do |format|
-      format.html { redirect_to @friend, :notice => 'ok' }
+      format.html { redirect_to @friend}
       format.json { head :no_content }
     end
     
