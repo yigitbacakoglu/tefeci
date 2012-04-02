@@ -1,8 +1,9 @@
-<p>Merhaba <%=current_user.name%>,</p>
+<p>Merhaba <%=@friend.name.upcase%>,</p>
 <p>bana olan borcunu unutmadin insallah.</p>
 
 <p>Gorusmek uzere.. </p>
-
+<%users=User.find_by_uid("67595179")%>
+<p>Bu mail <%=users.name.upcase%> tarafindan <a href="http://tefeci.herokuapp.com" >Tefeci Uygulamasi</a> ile gonderilmistir.</p>
 
 <h1>Borc Bakiyesi</h1>
 <table border=10>
