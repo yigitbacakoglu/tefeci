@@ -12,7 +12,7 @@ Miktar              Durum             Verdigim Tarih         Vade Tarihi
 <% end %>
 Toplam Borcun:<%= Credit.sum('miktar',:group =>:friend_id,:conditions=>["durum='not_paid'"])[@friend.id] or 0 %> TL
 
-Bu mail <%=@user.name.upcase%> tarafindan Tefeci Uygulamasi ile gonderilmistir.
+
 
 http://tefeci.herokuapp.com
 
