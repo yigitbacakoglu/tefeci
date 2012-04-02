@@ -8,7 +8,7 @@
           <li> <li><a href="<%= new_credit_path(:friend_id => @friend)%>" >Yeni Borc Ekle</a></li>
             <li><a href="<%= edit_friend_path(@friend)%>">Kisiyi Duzenle</a></li>
             <li><%= link_to 'Kisiyi sil', @friend, :confirm => 'Kisiyi silerek bu kisinin tum borclarini da sileceksiniz. Emin misiniz? ', :method => :delete %></li>
-           <li> <a href="<%= tweets_path(:tweet =>  "#{@friend.name.upcase} #{@friend.surname.upcase}'n bana #{@borc} TL borcu var ve odemiyor :(" )%>" >Tweeter'da Paylas</a></li>
+           <li> <a href="<%= create_path(:tweet =>  "#{@friend.name.upcase} #{@friend.surname.upcase}'n bana #{@borc} TL borcu var ve odemiyor :(" )%>" >Twitter'da Paylas</a></li>
         
             <li><a href="<%= email_path(@friend)%>">Mail At</a></li>
             
