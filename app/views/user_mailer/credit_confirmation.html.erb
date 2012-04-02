@@ -1,0 +1,39 @@
+<p>Merhaba <%=@friend.name.upcase%>,</p>
+<p>bana olan borcunu unutmadin insallah.</p>
+
+<p>Gorusmek uzere.. </p>
+<p>Bu mail arkadasiniz tarafindan <a href="http://tefeci.herokuapp.com" >Tefeci Uygulamasi</a> ile gonderilmistir.</p>
+
+<h1>Borc Bakiyesi</h1>
+<table border=10>
+  <tr>
+    
+    <th>Miktar</th>
+    <th>Durum</th>
+    <th>Verdigim Tarih</th>
+    <th>Vade Tarihi</th>
+    
+  </tr>
+
+<% @credits.each do |credit| %>
+  <tr>
+    
+    <td width=200><%= credit.miktar %></td>
+    
+     <%if credit.durum == "not_paid"%>
+  
+ <td width=200> <%= "Odenmedi" %></td>
+  <% else %>
+  
+ <td width=200> <%= "Odendi" %></td>
+  <%end%>
+    
+    
+    <td width=200><%= credit.ver_tarih.to_date() %></td>
+    <td width=200><%= credit.vade_tarih.to_date() %></td>
+    
+  </tr>
+<% end %>
+</table>
+
+Toplam :<%= Credit.sum('miktar',:group =>:friend_id,:conditions=>["durum='not_paid'"])[@friend.id] or 0 %> TL
