@@ -1,4 +1,5 @@
 <div id="main">
+   <%@borc= Credit.sum('miktar',:group =>:friend_id,:conditions=>["durum='not_paid'"])[@friend.id] or 0 %>
         <div class="right">
         
         
@@ -7,7 +8,8 @@
           <li> <li><a href="<%= new_credit_path(:friend_id => @friend)%>" >Yeni Borc Ekle</a></li>
             <li><a href="<%= edit_friend_path(@friend)%>">Kisiyi Duzenle</a></li>
             <li><%= link_to 'Kisiyi sil', @friend, :confirm => 'Kisiyi silerek bu kisinin tum borclarini da sileceksiniz. Emin misiniz? ', :method => :delete %></li>
-            <li><a href="#">Hatirlat</a></li>
+           <li> <a href="<%= tweets_path(:tweet =>  "#{@friend.name.upcase} #{@friend.surname.upcase}'n bana #{@borc} TL borcu var ve odemiyor :(" )%>" >Tweeter'da Paylas</a></li>
+        
             <li><a href="<%= email_path(@friend)%>">Mail At</a></li>
             
            
@@ -35,7 +37,11 @@
   <%= @friend.email %></h3>
 </p>
 <h3> <b>Toplam Borcu:</b>
-  <%= Credit.sum('miktar',:group =>:friend_id,:conditions=>["durum='not_paid'"])[@friend.id] or 0 %> TL</h3>
+  <% if @borc %> 
+   <%=@borc %>TL</h3>
+   <% else %>
+    0 TL</h3>
+    <% end %>
 
 <p>&nbsp;</p>
  </div>

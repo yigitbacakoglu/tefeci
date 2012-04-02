@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120330141437) do
+ActiveRecord::Schema.define(:version => 20120402170422) do
 
   create_table "credits", :force => true do |t|
     t.integer  "friend_id"
@@ -35,8 +35,10 @@ ActiveRecord::Schema.define(:version => 20120330141437) do
     t.string "provider"
     t.string "uid"
     t.string "name"
-    t.string "created_at", :null => false
-    t.string "updated_at", :null => false
+    t.string "created_at",   :null => false
+    t.string "updated_at",   :null => false
+    t.string "token"
+    t.string "token_secret"
   end
 
 end

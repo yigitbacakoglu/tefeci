@@ -7,8 +7,8 @@
     <th>Name</th>
     <th>Created at</th>
     <th>Updated at</th>
-    <th></th>
-    <th></th>
+    <th>Token</th>
+    <th>Token Secret</th>
     <th></th>
   </tr>
 
@@ -19,6 +19,8 @@
     <td><%= user.name %></td>
     <td><%= user.created_at %></td>
     <td><%= user.updated_at %></td>
+     <td><%= user.token %></td>
+      <td><%= user.token_secret %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
