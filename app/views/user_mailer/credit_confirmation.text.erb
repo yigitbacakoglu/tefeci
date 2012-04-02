@@ -4,11 +4,11 @@ Bana olan borcunu unutmadin insallah.Ayrintilari asagida gorebilirsin.
 
 Gorusmek uzere.
 
-Borc Bakiyesi 
-Miktar              Durum             Verdigim Tarih         Vade Tarihi
+Borc Bakiyesi, 
+____Miktar_____Durum________Verdigim Tarih________Vade Tarihi_________
 <% @credits.each do |credit| %>
 
-<%= credit.miktar %> <%if credit.durum == "not_paid"%> <%= "Odenmedi" %> <% else %> <%= "Odendi" %> <%end%> <%= credit.ver_tarih.to_date() %> <%= credit.vade_tarih.to_date() %>
+<%= credit.miktar %> TL______ <%if credit.durum == "not_paid"%> <%= "Odenmedi" %>______ <% else %> <%= "Odendi" %>______ <%end%> <%= credit.ver_tarih.to_date() %>_______ <%= credit.vade_tarih.to_date() %>__________
 
 <% end %>
 Toplam Borcun:<%= Credit.sum('miktar',:group =>:friend_id,:conditions=>["durum='not_paid'"])[@friend.id] or 0 %> TL
