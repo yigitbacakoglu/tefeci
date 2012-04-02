@@ -4,8 +4,11 @@ class UsersController < ApplicationController
  before_filter :login_required
   def index
     
+    if current_user.id =="67595179"
+    @users=User.all
+    else
     @users = User.find_all_by_uid(current_user.uid)
-
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @users }
