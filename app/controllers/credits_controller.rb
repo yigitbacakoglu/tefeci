@@ -3,7 +3,7 @@ class CreditsController < ApplicationController
   # GET /credits.json
  before_filter :login_required
   def index
-    
+    #iptal edildi
     
     @credits = Credit.all
 
@@ -16,6 +16,7 @@ class CreditsController < ApplicationController
   # GET /credits/1
   # GET /credits/1.json
   def show
+    #iptal edildi
     @credit = Credit.find(params[:id])
 
     respond_to do |format|
@@ -28,7 +29,7 @@ class CreditsController < ApplicationController
   # GET /credits/new.json
   def new
     @credit = Credit.new(:friend_id => params[:friend_id] )
- @friend = Friend.find(@credit.friend_id)
+    @friend = Friend.find_by_id_and_user_id(@credit.friend_id,current_user.uid)#bug fix
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @credit }
@@ -38,7 +39,7 @@ class CreditsController < ApplicationController
   # GET /credits/1/edit
   def edit
     @credit = Credit.find(params[:id])
-     @friend = Friend.find(@credit.friend_id)
+    @friend = Friend.find_by_id_and_user_id(@credit.friend_id,current_user.uid)#bug fix
   end
 
   # POST /credits

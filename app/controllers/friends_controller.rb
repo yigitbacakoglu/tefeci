@@ -6,6 +6,8 @@ before_filter :login_required
 
   
   def index
+
+    
     @friends = Friend.find_all_by_user_id(current_user.uid)
     
     respond_to do |format|
@@ -20,7 +22,7 @@ before_filter :login_required
 
 
     @credit=Credit.find_all_by_friend_id(params[:id])
-    @friend = Friend.find(params[:id])
+    @friend = Friend.find_by_id_and_user_id(params[:id],current_user.uid) #bugfix login olan herkes herkesin arkadasini goremez
     respond_to do |format|
       format.html
       format.json { render :json => @friend }
@@ -43,7 +45,7 @@ before_filter :login_required
 
   # GET /friends/1/edit
   def edit
-    @friend = Friend.find(params[:id])
+    @friend = Friend.find_by_id_and_user_id(params[:id],current_user.uid)#bugfix login olan herkes herkesin arkadasini goremez
   end
 
   # POST /friends
