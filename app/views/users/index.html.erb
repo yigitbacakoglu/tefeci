@@ -1,31 +1,49 @@
-<h1>Listing users</h1>
 
-<table>
-  <tr>
-    <th>Provider</th>
-    <th>Uid</th>
-    <th>Name</th>
-    <th>Created at</th>
-    <th>Updated at</th>
-    <th>Token</th>
-    <th>Token Secret</th>
-    <th></th>
-  </tr>
-
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.provider %></td>
+<div class="wrapper col5">
+  <div id="footer">
+    <h2>Twitter Kullanici Bilgilerin</h2>
+    <table summary="Summary Here" cellpadding="0" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Provider</th>
+          <th>Uid</th>
+          <th>Name</th>
+          <th>Created At</th>
+          <th>Updated At</th>
+          <th>Token</th>
+          <th>Token Secret</th>
+        </tr>
+      </thead>
+     <%a=1%>
+     <tbody>
+        <% @users.each do |user| %>
+           
+        
+        <%if a==1%>
+        <tr class="light">
+          <%a=0%>
+          <%else%>
+          <tr class="dark">
+            <%a=1%>
+            <%end%>
+          <td><%= user.provider %></td>
     <td><%= user.uid %></td>
     <td><%= user.name %></td>
     <td><%= user.created_at %></td>
     <td><%= user.updated_at %></td>
      <td><%= user.token %></td>
       <td><%= user.token_secret %></td>
+         
+        </tr>
+        <%end%>
+      </tbody>
+    </table>
+    <br class="clear" />
+    
+  </div>
+</div>
 
-  </tr>
-<% end %>
-</table>
-
-<br />
+  
+   
 
 

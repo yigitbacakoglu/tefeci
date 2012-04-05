@@ -1,87 +1,88 @@
-<div id="main">
-   <%@borc= Credit.sum('miktar',:group =>:friend_id,:conditions=>["durum='not_paid'"])[@friend.id] or 0 %>
-        <div class="right">
-        
-        
-        <div class="nav">
-          <ul>
-          <li> <li><a href="<%= new_credit_path(:friend_id => @friend)%>" >Yeni Borc Ekle</a></li>
-            <li><a href="<%= edit_friend_path(@friend)%>">Kisiyi Duzenle</a></li>
-            <li><%= link_to 'Kisiyi sil', @friend, :confirm => 'Kisiyi silerek bu kisinin tum borclarini da sileceksiniz. Emin misiniz? ', :method => :delete %></li>
-           <li> <a href="<%= create_path(:tweet =>  "#{@friend.name.upcase} #{@friend.surname.upcase}'n bana #{@borc} TL borcu var ve odemiyor :(" )%>" >Twitter'da Paylas</a></li>
-        
-            <li><a href="<%= email_path(@friend)%>">Mail At</a></li>
-            
-           
-            
-             
-             
-          </ul>
-        </div>
+<div class="wrapper col3"></div>
+<div class="wrapper col4">
+  <div id="container">
+    <div id="content">
+      <%@borc= Credit.sum('miktar',:group =>:friend_id,:conditions=>["durum='not_paid'"])[@friend.id] or 0 %>
+      <h2>Kisi Bilgileri</h2>
+     <h3>Adi : <%= @friend.name.upcase %>
+       <p>Soyad : <%= @friend.surname.upcase %></p>
+      <p>Email : <%= @friend.email %></p></h3>
+      <p>Toplam Borcu : <% if @borc %> 
+                        <%=@borc %>TL</h3>
+                        <% else %>
+                        0 TL</h3>
+                        <% end %>    </p>
+    </div>
+    <div id="column">
+      <div class="flickrbox">
+        <h2 class="title">ISLEMLER        </h2>
+        <ul>
+          <li>Kisi Duzenle<a href="<%= edit_friend_path(@friend)%>"><img src="../../images/edit.jpg" alt="" width="65" height="65" /></a></li>
+          <li><%= link_to 'KISIYI SIL', @friend, :confirm => 'Kisiyi silerek bu kisinin tum borclarini da sileceksiniz. Emin misiniz? ', :method => :delete %><img src="../images/delete.jpg" alt="" width="65" height="65" /></a></li>
+          <li>Yeni Borc<a href="<%= new_credit_path(:friend_id => @friend)%>" ><img src="../../images/add.jpg" alt="" width="65" height="65" /></a></li>
+          <li>Email At<a href="<%= email_path(@friend)%>"><img src="../../images/mail1.png" alt="" width="65" height="65" /></a></li>
+          <li class="last">Tweet At<a href="<%= create_path(:tweet =>  "#{@friend.name.upcase} #{@friend.surname.upcase}'n bana #{@borc} TL borcu var ve odemiyor :(" )%>" ><img src="../../images/twitter.png" alt="" width="65" height="65" /></a></li>
+        </ul>
       </div>
-<p>&nbsp;</p>
-<p id="notice"><%= notice %></p>
+    </div>
+    <br class="clear" />
 
-<p>
- <h3> <b>Adi:</b>
-  <%= @friend.name %></h3>
-</p>
-
-<p>
- <h3> <b>Soyadi:</b>
-  <%= @friend.surname %></h3>
-</p>
-
-<p>
- <h3> <b>Email:</b>
-  <%= @friend.email %></h3>
-</p>
-<h3> <b>Toplam Borcu:</b>
-  <% if @borc %> 
-   <%=@borc %>TL</h3>
-   <% else %>
-    0 TL</h3>
-    <% end %>
-
-<p>&nbsp;</p>
- </div>
-
-<h1>Borc Bakiyesi</h1>
-<p>&nbsp;</p>
-
-
-<table border="7">
-  <tr>
-   
-    <th><h2>Miktar </h2></th>
-    <th><h1>Durum</h1></th>
-    <th><h1>Verilis Tarihi</h1></th>
-    <th><h1>Vade Tarihi</h1></th>
-    <td colspan="2"><h1>Islemler</h1></td>
-    
-  </tr>
-
-<% @credit.each do |credit| %>
-  <tr>
-   
-    <td width=150><h3><%= credit.miktar %><%=" TL"%></h3></td>
-    <%if credit.durum == "not_paid"%>
   
- <td width=150> <h3><%= "Odenmedi" %></h3></td>
-  <% else %>
+    <%if @e==0 %>
+    <p align="center" class="mailOK">Arkadasina, Borc Ekstresi E-mail ile gonderildi !  </p>
+   <%@e=3%> 
+   <%end%>
+   <%if @e==1 %>
+   <%@e=3%>
+    <p align="center" class="mailOK">Arkadasin twitter'da rezil edildi :)  </p>
+    <%end%>
+
+
+  </div>
+</div>
+<div class="wrapper col5">
+  <div id="footer">
+    <h2>Borc Bakiyesi</h2>
+    <table summary="Summary Here" cellpadding="0" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Miktar</th>
+          <th>Durum</th>
+          <th>Verdigim Tarih</th>
+          <th>Vade Tarihi</th>
+          <th colspan="2">Islemler</th>
+        </tr>
+      </thead>
+     <%a=1%>
+     <tbody>
+        <% @credit.each do |credit| %>
+ 
+        
+        <%if a==1%>
+        <tr class="light">
+          <%a=0%>
+          <%else%>
+          <tr class="dark">
+            <%a=1%>
+            <%end%>
+          <td><%= credit.miktar %><%=" TL"%></td>
+          <%if credit.durum == "not_paid"%>
   
- <td width=150><h3> <%= "Odendi" %></h3></td>
-  <%end%>
-    <td width=150><h3><%= credit.ver_tarih.to_date() %></h3></td>
-    <td width=150><h3><%= credit.vade_tarih.to_date() %></h3></td>
-    
-    <td width=70 ><h3><%= link_to 'Duzenle', edit_credit_path(credit) %><h3></td>
-    <td width=70><h3><%= link_to 'Borcu Sil', credit, :confirm => 'Borcunu odedi mi ?', :method => :delete %><h3></td>
-    
-  </tr>
-<% end %>
-</table>
+          <td><%= "Odenmedi" %></td>
+            <% else %>
+  
+         <td> <%= "Odendi" %></td>
+          <%end%>
 
-
-<br />
-
+          
+          <td><%= credit.ver_tarih.to_date() %></td>
+          <td><%= credit.vade_tarih.to_date() %></td>
+          <td><%= link_to 'Duzenle', edit_credit_path(credit) %> </td>
+          <td><%= link_to '  Borcu Sil', credit, :confirm => 'Borcunu odedi mi ?', :method => :delete %></td>
+        </tr>
+        <%end%>
+      </tbody>
+    </table>
+    <br class="clear" />
+  </div>
+</div>

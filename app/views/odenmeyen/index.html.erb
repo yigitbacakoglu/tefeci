@@ -1,37 +1,42 @@
-<p>&nbsp;</p>
-<h1>Bekleyen Paralarim</h1>
-<p></p>
-<p>&nbsp;</p>
-<table border=10>
-  <tr>
-    <th><h2>Adi</h2></th>
-    <th><h1>Soyadi</h1></th>
-    <th><h1>Email</h1></th>
-    <td><h1>Odenmeyen Borc</h1></td>
-    <td><h1>Islemler</h1></td>
-   
-  </tr>
-
-<% @credits.each do |credit| %>
-  
-  <% @friends=Friend.find(credit.friend_id)%>
-  
-  <tr>
-    <td width=180><h3><%= @friends.name %></h3></td>
+<div class="wrapper col5">
+  <div id="footer">
+    <h2>Bekleyen Paralarim</h2>
+    <table summary="Summary Here" cellpadding="0" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Adi</th>
+          <th>Soyadi</th>
+          <th>Email</th>
+          <th>Odenmeyen Borc Miktari</th>
+          <th>Islemler</th>
+        </tr>
+      </thead>
+     <%a=1%>
+     <tbody>
+        <% @credits.each do |credit| %>
+            <% @friends=Friend.find(credit.friend_id)%>
+        
+        <%if a==1%>
+        <tr class="light">
+          <%a=0%>
+          <%else%>
+          <tr class="dark">
+            <%a=1%>
+            <%end%>
+          <td><%= @friends.name.upcase %></td>
+          <td><%= @friends.surname.upcase %></td>
+          <td><%= @friends.email %></td>
+           <td><%=credit.miktar%> TL</td>
+          <td><p align="center"><a href="<%= friend_path(@friends)%>" >Kisiyi Goruntule</a></p></td>
+         
+        </tr>
+        <%end%>
+      </tbody>
+    </table>
+    <br class="clear" />
     
-    <td width=180 ><h3><%= @friends.surname %></h3></td>
-    <td width=180><h3><%= @friends.email %></h3></td>
-    <td width=180><h3><%=credit.miktar%> TL</h3></td>
-
-   
-    <td><h3><a href="<%= friend_path(@friends)%>" >Kisiyi Goruntule</a></h3></td>
-    
-    
-  </tr>
-<% end %>
-</table>
-
-<br />
+  </div>
+</div>
 
   
    

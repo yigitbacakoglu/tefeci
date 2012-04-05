@@ -1,33 +1,38 @@
-<p>&nbsp;</p>
-<h1>Arkadaslarim</h1>
-<p></p>
-<p>&nbsp;</p>
-<table border=10>
-  <tr>
-    <th><h2>Adi</h2></th>
-    <th><h1>Soyadi</h1></th>
-    <th><h1>Email</h1></th>
-    <td colspan="2"><h1>Islemler</h1></td>
-   
-  </tr>
 
-<% @friends.each do |friend| %>
-  <tr>
-    <td width=180><h3><%= friend.name %></h3></td>
-    
-    <td width=180 ><h3><%= friend.surname %></h3></td>
-    <td width=180><h3><%= friend.email %></h3></td>
-   
-    <td><h3><%= link_to 'Borc Bilgisi', friend %></h3></td>
-    <td><h3><%= link_to 'Kisiyi Duzenle', edit_friend_path(friend) %></h3></td>
-    
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-  <div id="main">  
-<h3><%= link_to 'Yeni Arkadas Ekle', new_friend_path %></h3>
+<div class="wrapper col5">
+  <div id="footer">
+    <h2>Arkadaslarim</h2>
+    <table summary="Summary Here" cellpadding="0" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Adi</th>
+          <th>Soyadi</th>
+          <th>Email</th>
+          <th colspan="2">Islemler</th>
+        </tr>
+      </thead>
+     <%a=1%>
+     <tbody>
+        <% @friends.each do |friend| %>
+ 
+        
+        <%if a==1%>
+        <tr class="light">
+          <%a=0%>
+          <%else%>
+          <tr class="dark">
+            <%a=1%>
+            <%end%>
+          <td><%= friend.name.upcase %></td>
+          <td><%= friend.surname.upcase %></td>
+          <td><%= friend.email %></td>
+          <td><p align="center"><%= link_to 'BORC BILGISI', friend %></p></td>
+          <td><p align="center"> <%= link_to 'KISIYI DUZENLE', edit_friend_path(friend) %></p></td>
+        </tr>
+        <%end%>
+      </tbody>
+    </table>
+    <br class="clear" />
+    <h3><%= link_to '+ Yeni Arkadas Ekle', new_friend_path %></h3>
+  </div>
 </div>
-   
