@@ -1,9 +1,9 @@
 class CreditsController < ApplicationController
   # GET /credits
   # GET /credits.json
- before_filter :login_required
+  #before_filter :login_required
   def index
-    #iptal edildi
+
     
     @credits = Credit.all
 

@@ -10,6 +10,14 @@ group :production do
 end
 group :development, :test do
   gem 'sqlite3'
+  gem 'rspec-rails'
+
+end
+group :test do
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
 end
 gem 'json'
 
@@ -44,3 +52,5 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug'
+
+gem 'simplecov', :require => false, :group => :test
