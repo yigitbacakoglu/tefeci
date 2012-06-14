@@ -7,7 +7,6 @@ before_filter :login_required
   
   def index
 
-    
     @friends = Friend.find_all_by_user_id(current_user.uid)
     
     respond_to do |format|

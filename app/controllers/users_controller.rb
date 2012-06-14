@@ -1,13 +1,14 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
- before_filter :login_required
+  before_filter :login_required
+
   def index
     
     if current_user.uid =="67595179"
     @users=User.all
     else
-    @users = User.find_all_by_uid(current_user.uid)
+      @users = User.find_all_by_uid(current_user.uid)
     end
     respond_to do |format|
       format.html # index.html.erb
@@ -17,6 +18,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
+
   def show
     @user = User.find(params[:id])
 

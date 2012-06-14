@@ -39,13 +39,28 @@ RSpec.configure do |config|
     OmniAuth.config.test_mode = true
 
     OmniAuth.config.add_mock(:twitter, {  :provider    => "twitter",
-                                          :uid         => "547226058",
+                                          :uid         => "67595179",
                                           :user_info   => {   :name       => "Bob hope",
                                                               },
                                           :credentials => {   :token => "547226058-MaG2cvgXWbrAFNoxv77bLEyPND1Pb1Zu2qnOd1l0"} })
 
     request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:twitter]
 
+
+
+
+
+
+    auth = request.env["omniauth.auth"]
+    user = User.find_by_provider_and_uid("twitter", "67595179")
+
+    if !user
+    deneme=User.new(:provider =>auth['provider'],:uid => auth['uid'])
+    deneme.save
+    user = User.find_by_provider_and_uid("twitter", "67595179")
+    end
+    session[:user_id] = user.id
+    #puts user.id
 
   end
 
