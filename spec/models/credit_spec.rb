@@ -16,6 +16,8 @@ describe Credit do
     @credit.get_status.should eq("Odendi.")
   end
 
+
+
   describe "when miktar is not present" do
     before { @credit.miktar = " "}
     it do should_not be_valid end

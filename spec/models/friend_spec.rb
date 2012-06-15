@@ -10,6 +10,28 @@ describe Friend do
 
   it do should respond_to(:name) end
   it do should respond_to(:email) end
+
+
+
+
+  describe do
+    before do
+         @friend.credits.create(:miktar => 100 , :durum => "paid")
+     end
+       it do
+         should be_valid
+       end
+    it do
+         @credit=Credit.find(1)
+         @credit.friend_id.should eq(@friend.id)
+       end
+
+  end
+
+
+
+
+
   it do should be_valid end
 
   describe "when name is not present" do
