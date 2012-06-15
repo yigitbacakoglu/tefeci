@@ -82,7 +82,7 @@ before_filter :login_required
 
   def email
     @friend = Friend.find(params[:id])
-    @e=1
+
     UserMailer.credit_confirmation(@friend).deliver
      respond_to do |format|
       format.html { redirect_to @friend}

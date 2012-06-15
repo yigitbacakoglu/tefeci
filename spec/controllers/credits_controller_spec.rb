@@ -98,6 +98,12 @@ describe CreditsController do
       #get :new , :friend_id => @friend.id
       #puts assigns(:credit).friend_id
     end
+    it "should render new action if credit doesnt be saved" do
+
+      Credit.stub(:new).with({"these"=>"params"}) {mock_credit(:save => false, :friend_id => @friend.id)}
+      post :create, :credit => {"these"=>"params"}
+      response.should render_template("new")
+    end
   end
   #----------
   #----------

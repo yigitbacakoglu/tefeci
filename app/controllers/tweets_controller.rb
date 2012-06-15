@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   
   def create  
 
-    #twitter üzerinde borçlu olanı ifşa ediyoruz ... 
+
       twitter = User.find_by_uid(current_user.uid.to_s)
     if twitter.present?
       Twitter.configure do |config|
@@ -14,8 +14,7 @@ class TweetsController < ApplicationController
       Twitter.update(params[:tweet])
       redirect_to friends_path
       
-  end 
-      
+  end
 end
 end
 

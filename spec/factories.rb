@@ -8,12 +8,15 @@ FactoryGirl.define do
     name  "Hello"
     email "example@ex.com"
     user_id "67595179"
+
   end
 
   factory :credit do
     miktar 1000.0
-    durum "not_paid"
-end
+    durum "paid"
+    friend_id 1
+  end
+
 end
 
 
