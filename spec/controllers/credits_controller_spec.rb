@@ -29,6 +29,7 @@ describe CreditsController do
       get :index
       assigns(:credits).should eq(credit)
 
+
     end
   end
   #----------

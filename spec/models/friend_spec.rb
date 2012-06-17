@@ -10,6 +10,7 @@ describe Friend do
 
   it do should respond_to(:name) end
   it do should respond_to(:email) end
+  it do should_not allow_value("blah").for(:email) end
 
 
 
@@ -33,6 +34,8 @@ describe Friend do
 
 
   it do should be_valid end
+  it do should belong_to(:user)   end
+  it do should have_many(:credits) end
 
   describe "when name is not present" do
     before { @friend.name = " "}
