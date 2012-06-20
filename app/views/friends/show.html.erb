@@ -17,11 +17,11 @@
       <div class="flickrbox">
         <h2 class="title">ISLEMLER        </h2>
         <ul>
-          <li>Kisi Duzenle<a href="<%= edit_friend_path(@friend)%>"><img src="../../images/edit.jpg" alt="" width="65" height="65" /></a></li>
+          <li>Kisi Duzenle<a href="<%= edit_friend_path(@friend)%>"><img src="../../images/edit.jpg" alt="" width="65" height="65" alt="edit_friend"/></a></li>
           <li><%= link_to 'KISIYI SIL', @friend, :confirm => 'Kisiyi silerek bu kisinin tum borclarini da sileceksiniz. Emin misiniz? ', :method => :delete %><img src="../images/delete.jpg" alt="" width="65" height="65" /></a></li>
-          <li>Yeni Borc<a href="<%= new_credit_path(:friend_id => @friend)%>" ><img src="../../images/add.jpg" alt="" width="65" height="65" /></a></li>
-          <li>Email At<a href="<%= email_path(@friend)%>"><img src="../../images/mail1.png" alt="" width="65" height="65" /></a></li>
-          <li class="last">Tweet At<a href="<%= create_path(:tweet =>  "#{@friend.name.upcase} #{@friend.surname.upcase}'n bana #{@borc} TL borcu var ve odemiyor :(" )%>" ><img src="../../images/twitter.png" alt="" width="65" height="65" /></a></li>
+          <li>Yeni Borc<a href="<%= new_credit_path(:friend_id => @friend)%>" ><img src="../../images/add.jpg" alt="yeni_borc" width="65" height="65" /></a></li>
+          <li>Email At<a href="<%= email_path(@friend)%>"><img src="../../images/mail1.png" alt="send_email" width="65" height="65" /></a></li>
+          <li class="last">Tweet At<a href="<%= create_path(:tweet =>  "#{@friend.name.upcase} #{@friend.surname.upcase}'n bana #{@borc} TL borcu var ve odemiyor :(" )%>" ><img src="../../images/twitter.png" alt="send_tweet" width="65" height="65" /></a></li>
         </ul>
       </div>
     </div>

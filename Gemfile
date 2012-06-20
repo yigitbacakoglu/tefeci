@@ -14,11 +14,14 @@ group :development, :test do
 
 end
 group :test do
-  gem 'capybara'
   gem 'factory_girl_rails'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
-  gem "capybara"
+  gem 'shoulda-matchers'
+  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
 gem 'json'
 

@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/jnicklas/capybara.git
+  revision: 6cb1b124d5204999d51fbb3de99eb2c686078f90
+  specs:
+    capybara (1.1.2)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      selenium-webdriver (~> 2.0)
+      xpath (~> 0.1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -31,13 +43,6 @@ GEM
     addressable (2.2.7)
     arel (3.0.2)
     builder (3.0.0)
-    capybara (1.1.2)
-      mime-types (>= 1.16)
-      nokogiri (>= 1.3.3)
-      rack (>= 1.0.0)
-      rack-test (>= 0.5.4)
-      selenium-webdriver (~> 2.0)
-      xpath (~> 0.1.4)
     childprocess (0.3.2)
       ffi (~> 1.0.6)
     coffee-rails (3.2.2)
@@ -83,6 +88,8 @@ GEM
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
     json (1.6.6)
+    launchy (2.1.0)
+      addressable (~> 2.2.6)
     libwebsocket (0.1.3)
       addressable
     mail (2.4.4)
@@ -156,6 +163,7 @@ GEM
       libwebsocket (~> 0.1.3)
       multi_json (~> 1.0)
       rubyzip
+    shoulda-matchers (1.0.0)
     simple_oauth (0.1.5)
     simplecov (0.6.4)
       multi_json (~> 1.0)
@@ -189,18 +197,21 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  capybara
+  capybara!
   coffee-rails (~> 3.2.1)
   cucumber-rails
   database_cleaner
   factory_girl_rails
   jquery-rails
   json
+  launchy
   omniauth-twitter
   pg
   rails (= 3.2.2)
   rspec-rails
   sass-rails (~> 3.2.3)
+  selenium-webdriver
+  shoulda-matchers
   simplecov
   sqlite3
   twitter

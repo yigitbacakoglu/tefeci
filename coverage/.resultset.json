@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/yigitcan/Desktop/cloudarena/tefeci/app/controllers/application_controller.rb": [
+      "C:/Users/Work/Desktop/tefeci/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -21,35 +21,35 @@
         null,
         null
       ],
-      "/Users/yigitcan/Desktop/cloudarena/tefeci/app/helpers/application_helper.rb": [
+      "C:/Users/Work/Desktop/tefeci/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/yigitcan/Desktop/cloudarena/tefeci/app/helpers/credits_helper.rb": [
+      "C:/Users/Work/Desktop/tefeci/app/helpers/credits_helper.rb": [
         1,
         null
       ],
-      "/Users/yigitcan/Desktop/cloudarena/tefeci/app/helpers/friends_helper.rb": [
+      "C:/Users/Work/Desktop/tefeci/app/helpers/friends_helper.rb": [
         1,
         null
       ],
-      "/Users/yigitcan/Desktop/cloudarena/tefeci/app/helpers/home_helper.rb": [
+      "C:/Users/Work/Desktop/tefeci/app/helpers/home_helper.rb": [
         1,
         null
       ],
-      "/Users/yigitcan/Desktop/cloudarena/tefeci/app/helpers/odenen_helper.rb": [
+      "C:/Users/Work/Desktop/tefeci/app/helpers/odenen_helper.rb": [
         1,
         null
       ],
-      "/Users/yigitcan/Desktop/cloudarena/tefeci/app/helpers/odenmeyen_helper.rb": [
+      "C:/Users/Work/Desktop/tefeci/app/helpers/odenmeyen_helper.rb": [
         1,
         null
       ],
-      "/Users/yigitcan/Desktop/cloudarena/tefeci/app/helpers/users_helper.rb": [
+      "C:/Users/Work/Desktop/tefeci/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/yigitcan/Desktop/cloudarena/tefeci/app/controllers/credits_controller.rb": [
+      "C:/Users/Work/Desktop/tefeci/app/controllers/credits_controller.rb": [
         1,
         null,
         null,
@@ -140,7 +140,7 @@
         null,
         null
       ],
-      "/Users/yigitcan/Desktop/cloudarena/tefeci/app/models/credit.rb": [
+      "C:/Users/Work/Desktop/tefeci/app/models/credit.rb": [
         1,
         null,
         1,
@@ -153,7 +153,7 @@
         null,
         null
       ],
-      "/Users/yigitcan/Desktop/cloudarena/tefeci/app/controllers/friends_controller.rb": [
+      "C:/Users/Work/Desktop/tefeci/app/controllers/friends_controller.rb": [
         1,
         null,
         null,
@@ -233,9 +233,15 @@
         2,
         1,
         null,
+<<<<<<< HEAD
         null,
         null,
         null,
+=======
+        null,
+        null,
+        null,
+>>>>>>> 906663968d872a78821b15d97d6646e674688292
         1,
         1,
         null,
@@ -257,6 +263,29 @@
         null,
         2,
         0,
+<<<<<<< HEAD
+=======
+        null,
+        2,
+        null,
+        null,
+        2,
+        4,
+        2,
+        null,
+        null,
+        null
+      ],
+      "C:/Users/Work/Desktop/tefeci/app/models/friend.rb": [
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+>>>>>>> 906663968d872a78821b15d97d6646e674688292
         null,
         2,
         null,
@@ -289,6 +318,82 @@
         1,
         null,
         null,
+        null
+      ],
+      "C:/Users/Work/Desktop/tefeci/app/controllers/home_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "C:/Users/Work/Desktop/tefeci/app/controllers/odenen_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "C:/Users/Work/Desktop/tefeci/app/models/odenen.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "C:/Users/Work/Desktop/tefeci/app/controllers/odenmeyen_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "C:/Users/Work/Desktop/tefeci/app/models/odenmeyen.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "C:/Users/Work/Desktop/tefeci/app/controllers/sessions_controller.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         null,
@@ -360,20 +465,30 @@
         0,
         0,
         0,
+        0,
         null,
         0,
         0,
         0,
         null,
+<<<<<<< HEAD
         null,
         null,
+=======
+        null,
+        null,
+>>>>>>> 906663968d872a78821b15d97d6646e674688292
         1,
         0,
         0,
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/yigitcan/Desktop/cloudarena/tefeci/app/controllers/tweets_controller.rb": [
+=======
+      "C:/Users/Work/Desktop/tefeci/app/controllers/tweets_controller.rb": [
+>>>>>>> 906663968d872a78821b15d97d6646e674688292
         1,
         null,
         1,
@@ -396,12 +511,21 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/yigitcan/Desktop/cloudarena/tefeci/app/controllers/users_controller.rb": [
         1,
         null,
         null,
         1,
         null,
+=======
+      "C:/Users/Work/Desktop/tefeci/app/controllers/users_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+>>>>>>> 906663968d872a78821b15d97d6646e674688292
         1,
         null,
         2,
@@ -471,12 +595,21 @@
         null,
         0,
         0,
+<<<<<<< HEAD
         null,
         null,
         null,
         null,
         null,
         null,
+=======
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+>>>>>>> 906663968d872a78821b15d97d6646e674688292
         1,
         0,
         0,
@@ -488,24 +621,43 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/yigitcan/Desktop/cloudarena/tefeci/app/models/user.rb": [
+=======
+      "C:/Users/Work/Desktop/tefeci/app/models/user.rb": [
+>>>>>>> 906663968d872a78821b15d97d6646e674688292
         1,
         null,
         1,
         1,
+<<<<<<< HEAD
         null,
         1,
         0,
         0,
         0,
         0,
+=======
+>>>>>>> 906663968d872a78821b15d97d6646e674688292
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         null,
-        null,
+<<<<<<< HEAD
         null
       ],
       "/Users/yigitcan/Desktop/cloudarena/tefeci/app/mailers/user_mailer.rb": [
+=======
+        null,
+        null
+      ],
+      "C:/Users/Work/Desktop/tefeci/app/mailers/user_mailer.rb": [
+>>>>>>> 906663968d872a78821b15d97d6646e674688292
         1,
         1,
         1,
@@ -519,6 +671,10 @@
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1340000251
+=======
+    "timestamp": 1339935790
+>>>>>>> 906663968d872a78821b15d97d6646e674688292
   }
 }

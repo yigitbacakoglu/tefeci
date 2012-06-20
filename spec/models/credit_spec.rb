@@ -16,7 +16,7 @@ describe Credit do
     @credit.get_status.should eq("Odendi.")
   end
 
-
+  it do should belong_to(:friend) end
 
   describe "when miktar is not present" do
     before { @credit.miktar = " "}
